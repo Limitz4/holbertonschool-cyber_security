@@ -1,3 +1,5 @@
 #!/bin/bash
 
-ps -u root -o user,pid,vsz,rss,cmd | grep -v " 0 0"
+user=$1
+
+ps -u "$user" -o user,vsz,rss | grep -v " VSZ RSS" | grep -v " 0 0 "
