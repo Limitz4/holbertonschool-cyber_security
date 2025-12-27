@@ -1,2 +1,2 @@
 #!/bin/bash
-netstat -tulnp
+ss -tulnp
