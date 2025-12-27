@@ -1,1 +1,1 @@
-# Linux Security Basics
+Linux Security Basics
