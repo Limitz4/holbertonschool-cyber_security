@@ -1,1 +1,0 @@
-# Holberton Cyber Security Projects
