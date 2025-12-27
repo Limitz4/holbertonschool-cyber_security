@@ -1,2 +1,2 @@
 # Linux Security Basics
-This project contains tasks related to basic Linux security, including monitoring user login sessions.
+This project contains a bash script that displays the last 5 login sessions.
