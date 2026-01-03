@@ -27,10 +27,10 @@ END {
     for (i=1; i<=3; i++) {
         for (j=1; j<=12; j++) {
             f_name = cats[i] " " subf[j]
-            val = data[i,j]
-            if (subf[j] == "Street" && val != "") val = val " "
+            v = data[i,j]
+            if (subf[j] == "Street" && v != "") v = v " "
             if (subf[j] ~ /Ext/) f_name = f_name ":"
-            out = out f_name "," val "\n"
+            out = out f_name "," v "\n"
         }
     }
     printf "%s", substr(out, 1, length(out)-1)
