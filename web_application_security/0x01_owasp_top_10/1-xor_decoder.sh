@@ -1,14 +1,8 @@
 #!/bin/bash
-
-if [[ $1 != "{xor}"* ]]; then
-    data="$1"
-else
-    data="${1:5}"
+if [ -z "$1" ]; then
+    echo "Usage: $0 {xor}HASH"
+    exit 1
 fi
-
-# Base64-dən hex-ə çeviririk, sonra hər hex cütünü 5f (_) ilə XOR edirik
-decoded=$(echo -n "$data" | base64 -d | xxd -p -c1 | while read hex; do
-    printf "\\x$(printf '%x' $((0x$hex ^ 0x5f)))"
-done)
-
-echo -e "$decoded"
+encoded_string="${1#\{xor\}}"
+echo "$encoded_string" | base64 -d | perl -pe '$_ ^= "_" x length'
+echo "" 
